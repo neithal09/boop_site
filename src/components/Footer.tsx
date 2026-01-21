@@ -9,7 +9,7 @@ import {
   Instagram,
 } from "lucide-react";
 import { PageType } from "../types";
-import BoopLogo from "../../src/assets/Logo/BoopLogo.png";
+import BoopLogo from "../assets/Logo/BoopLogo.png";
 import { useScrollTrigger } from "../hooks/useScrollAnimation";
 
 interface FooterProps {

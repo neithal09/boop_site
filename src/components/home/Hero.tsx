@@ -36,7 +36,7 @@ export const Hero = ({ onNavigate }: HeroProps) => {
     {
       id: 1,
       image:
-        "/src/assets/our work/Exhibition Stall/Aahar 2025, New Delhi/Screenshot 2025-12-26 180857.png",
+        "/assets/our work/Exhibition Stall/Aahar 2025, New Delhi/Screenshot 2025-12-26 180857.png",
       client: "Aahar 2025",
       project: "Exhibition Stall Design",
       metric: "Major Trade Show",
@@ -45,7 +45,7 @@ export const Hero = ({ onNavigate }: HeroProps) => {
     {
       id: 2,
       image:
-        "/src/assets/our work/social media/india tv/Screenshot 2025-12-26 172657.png",
+        "/assets/our work/social media/india tv/Screenshot 2025-12-26 172657.png",
       client: "India TV",
       project: "Social Media Campaign",
       metric: "Digital Engagement",
@@ -54,7 +54,7 @@ export const Hero = ({ onNavigate }: HeroProps) => {
     {
       id: 3,
       image:
-        "/src/assets/our work/Exhibition Stall/IITF 2024, New Delhi/Screenshot 2025-12-26 181119.png",
+        "/assets/our work/Exhibition Stall/IITF 2024, New Delhi/Screenshot 2025-12-26 181119.png",
       client: "IITF 2024",
       project: "Exhibition Booth",
       metric: "New Delhi Expo",
@@ -63,7 +63,7 @@ export const Hero = ({ onNavigate }: HeroProps) => {
     {
       id: 4,
       image:
-        "/src/assets/our work/social media/amar ujala/Screenshot 2025-12-26 172418.png",
+        "/assets/our work/social media/amar ujala/Screenshot 2025-12-26 172418.png",
       client: "Amar Ujala",
       project: "Content Strategy",
       metric: "Brand Visibility",
@@ -72,7 +72,7 @@ export const Hero = ({ onNavigate }: HeroProps) => {
     {
       id: 5,
       image:
-        "/src/assets/our work/Exhibition Stall/IFF 2024, Mumbai/Screenshot 2025-12-26 181231.png",
+        "/assets/our work/Exhibition Stall/IFF 2024, Mumbai/Screenshot 2025-12-26 181231.png",
       client: "IFF 2024",
       project: "Trade Show Presence",
       metric: "Mumbai Event",
@@ -81,7 +81,7 @@ export const Hero = ({ onNavigate }: HeroProps) => {
     {
       id: 6,
       image:
-        "/src/assets/our work/social media/PTC/Screenshot 2025-12-26 172501.png",
+        "/assets/our work/social media/PTC/Screenshot 2025-12-26 172501.png",
       client: "PTC Network",
       project: "Social Media Design",
       metric: "Creative Campaigns",

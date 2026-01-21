@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { PageType } from "../types";
-import BoopLogo from "../../src/assets/Logo/BoopLogo.png";
+import BoopLogo from "../assets/Logo/BoopLogo.png";
 interface HeaderProps {
   currentPage: PageType;
   onNavigate: (page: PageType) => void;

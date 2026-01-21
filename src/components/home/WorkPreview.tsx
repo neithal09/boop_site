@@ -3,6 +3,15 @@ import { ArrowRight } from "lucide-react";
 import { PageType } from "../../types";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import asli from "../../assets/Asli.png";
+import marketing from "../../assets/marketing.jpg";
+import creative from "../../assets/creative.jpg";
+import amaarujala from "../../assets/Logo/amaarujala.png";
+import indiatv from "../../assets/Logo/IndiaTV.png";
+import lamar from "../../assets/Logo/Lamar.png";
+import porter from "../../assets/Logo/Porter.png";
+import wildthing from "../../assets/Logo/wildthing.png";
+import koffelo from "../../assets/Logo/Koffelo logo.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,32 +31,25 @@ export const WorkPreview = ({ onNavigate }: WorkPreviewProps) => {
   const featuredWork = [
     {
       id: 1,
-      image: "../src/assets/Asli.png",
+      image: asli,
       title: "Brand Campaign",
       category: "FMCG",
     },
     {
       id: 2,
-      image: "../src/assets/marketing.jpg",
+      image: marketing,
       title: "Marketing Campaign",
       category: "Media",
     },
     {
       id: 3,
-      image: "../src/assets/creative.jpg",
+      image: creative,
       title: "Creative Work",
       category: "Technology",
     },
   ];
 
-  const brands = [
-    "../../src/assets/Logo/amaarujala.png",
-    "../../src/assets/Logo/IndiaTV.png",
-    "../../src/assets/Logo/Lamar.png",
-    "../../src/assets/Logo/Porter.png",
-    "../../src/assets/Logo/wildthing.png",
-    "../../src/assets/Logo/Koffelo logo.png",
-  ];
+  const brands = [amaarujala, indiatv, lamar, porter, wildthing, koffelo];
 
   useEffect(() => {
     const ctx = gsap.context(() => {

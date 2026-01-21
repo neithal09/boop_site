@@ -285,11 +285,11 @@ export const Team = () => {
                 >
                   <div className="team-card group relative bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:border-white/30 transition-all duration-500 hover:transform hover:scale-105">
                     {/* Image container */}
-                    <div className="relative h-80 overflow-hidden bg-gray-900">
+                    <div className="relative h-64 sm:h-72 md:h-80 lg:h-96 overflow-hidden bg-gray-900">
                       <img
                         src={member.image}
                         alt={member.name}
-                        className="team-image w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
+                        className="team-image w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
                     </div>
