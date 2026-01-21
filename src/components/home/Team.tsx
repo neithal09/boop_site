@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Jeet from "../../assets/Jeet.png";
 import Kripal from "../../assets/Kripal.png";
 import sid from "../../assets/Siddharth.png";
-import neithal from "../../assets/Neithal.png";
+import neithal from "../../assets/neithal.png";
 import soman from "../../assets/Soman.png";
 import udit from "../../assets/Udit.png";
 import ali from "../../assets/Ali.png";
