@@ -560,9 +560,7 @@ export const WorkPage = () => {
         client: "ABP Majha",
         category: "BTL Activities",
         image: btlGanesh1,
-        images: [btlGanesh1, btlGanesh2, "/src/assets/ganesh.mp4"],
-        video: "/src/assets/ganesh.mp4",
-        poster: btlGanesh2,
+        images: [btlGanesh1, btlGanesh2],
       },
       {
         title: "Google Chromebook Roadshow",
@@ -2175,14 +2173,13 @@ export const WorkPage = () => {
                     )
                   }
                 >
-                  <video
-                    src="/src/assets/ganesh.mp4"
-                    alt="Ganesh Campaign Video"
+                  <img
+                    src={btlGanesh2}
+                    alt="Ganesh Campaign"
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                    poster={btlGanesh2}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <p className="text-white font-semibold">Campaign Video</p>
+                    <p className="text-white font-semibold">Click to view full gallery</p>
                   </div>
                 </div>
               </div>
