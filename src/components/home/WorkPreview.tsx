@@ -255,6 +255,29 @@ export const WorkPreview = ({ onNavigate }: WorkPreviewProps) => {
       }
     }, sectionRef);
 
+    // Refresh ScrollTrigger after all work images have loaded to prevent scroll jumps
+    const images = workGridRef.current?.querySelectorAll(
+      ".work-image",
+    ) as NodeListOf<HTMLImageElement>;
+    if (images) {
+      let loadedCount = 0;
+      const totalImages = images.length;
+      const onImageLoad = () => {
+        loadedCount++;
+        if (loadedCount === totalImages) {
+          ScrollTrigger.refresh();
+        }
+      };
+      images.forEach((img) => {
+        if (img.complete) {
+          onImageLoad();
+        } else {
+          img.addEventListener("load", onImageLoad);
+          img.addEventListener("error", onImageLoad);
+        }
+      });
+    }
+
     return () => ctx.revert();
   }, []);
 
@@ -315,6 +338,8 @@ export const WorkPreview = ({ onNavigate }: WorkPreviewProps) => {
                   <img
                     src={work.image}
                     alt={work.title}
+                    width={400}
+                    height={500}
                     className="work-image w-full h-full object-contain transition-all duration-700 group-hover:scale-105"
                   />
                 </div>
