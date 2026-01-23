@@ -14,7 +14,7 @@ import {
 import { PageType } from "../../types";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import bgImage from "../../assets/bgc.jpg";
+import bgImage from "../../assets/bgc.png";
 
 gsap.registerPlugin(ScrollTrigger);
 

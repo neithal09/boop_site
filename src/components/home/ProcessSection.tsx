@@ -4,6 +4,7 @@ import { PageType } from "../../types";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { scrambleReveal, scrambleText } from "../../utils/scrambleText";
+import image2 from "../../assets/image2.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -174,10 +175,18 @@ export const ProcessSection = ({ onNavigate }: ProcessSectionProps) => {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-black text-white py-32 overflow-hidden"
+      className="relative text-white py-32 overflow-hidden"
+      style={{
+        backgroundImage: `url(${image2})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
     >
       {/* Animated background */}
       <div className="absolute inset-0">
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/70"></div>
         <div className="bg-orb absolute top-20 left-10 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
         <div className="bg-orb absolute bottom-20 right-10 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
       </div>
