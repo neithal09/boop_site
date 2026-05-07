@@ -55,9 +55,17 @@ export const Header = ({ currentPage, onNavigate }: HeaderProps) => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="flex items-center justify-between h-16 sm:h-20 lg:h-24">
-            <div className="h-12 sm:h-16 lg:h-[120px] w-auto mt-0 sm:mt-4 lg:mt-8">
-              <img src={BoopLogo} className="h-full w-auto object-contain" />
-            </div>
+            <button
+              onClick={() => handleNavClick("home")}
+              aria-label="Go to home"
+              className="h-12 sm:h-16 lg:h-[120px] w-auto mt-0 sm:mt-4 lg:mt-8 cursor-pointer"
+            >
+              <img
+                src={BoopLogo}
+                alt="Boop logo"
+                className="h-full w-auto object-contain"
+              />
+            </button>
             <nav className="hidden md:flex items-center space-x-4 lg:space-x-10">
               {navItems.map((item) => (
                 <button

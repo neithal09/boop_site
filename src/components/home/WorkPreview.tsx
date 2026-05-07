@@ -58,18 +58,9 @@ export const WorkPreview = ({ onNavigate }: WorkPreviewProps) => {
         "(prefers-reduced-motion: reduce)",
       ).matches;
 
-      // Heading animation with pin effect
+      // Heading animation
       if (headingRef.current && !prefersReducedMotion) {
         const headingElements = headingRef.current.children;
-
-        // Pin the heading section briefly
-        ScrollTrigger.create({
-          trigger: headingRef.current,
-          start: "top 20%",
-          end: "+=300",
-          pin: true,
-          pinSpacing: false,
-        });
 
         // Staggered reveal with scale
         gsap.from(headingElements, {
@@ -85,19 +76,6 @@ export const WorkPreview = ({ onNavigate }: WorkPreviewProps) => {
           stagger: 0.15,
           ease: "power4.out",
         });
-
-        // Fade out heading as you scroll past
-        gsap.to(headingRef.current, {
-          scrollTrigger: {
-            trigger: headingRef.current,
-            start: "top top",
-            end: "bottom top",
-            scrub: 1,
-          },
-          opacity: 0.3,
-          scale: 0.95,
-          ease: "none",
-        });
       }
 
       // Work grid items animation
@@ -105,24 +83,21 @@ export const WorkPreview = ({ onNavigate }: WorkPreviewProps) => {
         const workItems = workGridRef.current.querySelectorAll(".work-item");
 
         workItems.forEach((item, index) => {
-          // Card reveal with enhanced effects
+          // Card reveal
           gsap.from(item, {
             scrollTrigger: {
               trigger: item,
               start: "top 85%",
-              end: "top 50%",
               toggleActions: "play none none reverse",
             },
-            y: 120,
+            y: 80,
             opacity: 0,
-            rotation: prefersReducedMotion ? 0 : 5,
-            scale: 0.85,
-            duration: 1.2,
-            delay: index * 0.15,
-            ease: "power4.out",
+            duration: 1,
+            delay: index * 0.12,
+            ease: "power3.out",
           });
 
-          // Image parallax effect with scale
+          // Image parallax effect
           const image = item.querySelector(".work-image");
           if (image && !prefersReducedMotion) {
             gsap.to(image, {
@@ -133,22 +108,7 @@ export const WorkPreview = ({ onNavigate }: WorkPreviewProps) => {
                 scrub: 1.5,
               },
               y: -40,
-              scale: 1.1,
               ease: "none",
-            });
-          }
-
-          // Card container scale on scroll progress
-          if (!prefersReducedMotion) {
-            gsap.to(item, {
-              scrollTrigger: {
-                trigger: item,
-                start: "top bottom",
-                end: "center center",
-                scrub: 2,
-              },
-              scale: 1.02,
-              ease: "power2.out",
             });
           }
 
