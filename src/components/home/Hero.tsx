@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { IndianBackgroundPattern } from "../IndianBackgroundPattern";
 import backgroundVideoWebm from "../../assets/8.webm";
 import backgroundVideoMp4 from "../../assets/8.mp4";
+import backgroundVideoMobile from "../../assets/new.mp4";
 import aahar from "../../assets/our work/Exhibition Stall/Aahar 2025, New Delhi/Screenshot 2025-12-26 180857.png";
 import indiatv from "../../assets/our work/social media/india tv/Screenshot 2025-12-26 172657.png";
 import iitf from "../../assets/our work/Exhibition Stall/IITF 2024, New Delhi/Screenshot 2025-12-26 181119.png";
@@ -249,6 +250,7 @@ export const Hero = ({ onNavigate }: HeroProps) => {
         preload="auto"
         className="absolute inset-0 w-full h-full object-cover"
       >
+        <source media="(max-width: 768px)" src={backgroundVideoMobile} type="video/mp4" />
         <source src={backgroundVideoMp4} type="video/mp4" />
         <source src={backgroundVideoWebm} type="video/webm" />
       </video>
