@@ -41,6 +41,8 @@ import porter from "../assets/porter.png";
 import amarjula from "../assets/Amar Ujala.png";
 import indiatv from "../assets/indiatv.png";
 import koffeelo from "../assets/koffelo.png";
+import uber from "../assets/Logo/Uber_logo_2018.png";
+import hilton from "../assets/Logo/hilton.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -56,6 +58,8 @@ export const ClientsPage = ({ onNavigate }: ClientsPageProps = {}) => {
   const cursorRef = useRef<HTMLDivElement>(null);
 
   const clients = [
+    uber,
+    hilton,
     indiatv,
     lamaar,
     basicInstant,
