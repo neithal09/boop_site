@@ -64,7 +64,7 @@ import btlHero2 from "../assets/our work/BTL Activities/Hero Electric Pan India 
 import btlHoli1 from "../assets/our work/BTL Activities/Holi Merchandising Box – Paras Dairy/Screenshot 2025-12-31 153837.png";
 import btlHoli2 from "../assets/our work/BTL Activities/Holi Merchandising Box – Paras Dairy/Screenshot 2025-12-31 153844.png";
 import btlVehicleVinyl1 from "../assets/our work/BTL Activities/Vehicle Branding Activity with Vinyl printing/Screenshot 2025-12-31 153730.png";
-import btlVehicleVinyl2 from "../assets/our work/BTL Activities/Vehicle Branding Activity with Vinyl printing/Screenshot 2025-12-31 153735.png";
+import btlVehicleVinyl2 from "../assets/uber.png";
 import btlVehiclePaint1 from "../assets/our work/BTL Activities/Vehicle Branding with painting/Screenshot 2025-12-31 153752.png";
 import btlVehiclePaint2 from "../assets/our work/BTL Activities/Vehicle Branding with painting/Screenshot 2025-12-31 153803.png";
 import btlMerchandising1 from "../assets/our work/BTL Activities/Merchandising T shirt/Screenshot 2025-12-31 153859.png";
@@ -601,7 +601,7 @@ export const WorkPage = () => {
         client: "Various",
         category: "BTL Activities",
         image: btlVehicleVinyl1,
-        images: [btlVehicleVinyl1, btlVehicleVinyl2],
+        images: [btlVehicleVinyl2, btlVehicleVinyl1],
       },
       {
         title: "Vehicle Branding with Painting",
@@ -2304,7 +2304,7 @@ export const WorkPage = () => {
                   }
                 >
                   <img
-                    src={btlVehicleVinyl1}
+                    src={btlVehicleVinyl2}
                     alt="Vehicle Vinyl 1"
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
@@ -2326,7 +2326,7 @@ export const WorkPage = () => {
                   }
                 >
                   <img
-                    src={btlVehicleVinyl2}
+                    src={btlVehicleVinyl1}
                     alt="Vehicle Vinyl 2"
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
