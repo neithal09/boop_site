@@ -12,7 +12,6 @@ import ravi from "../../assets/Ravi.png";
 import inderjit from "../../assets/inderjit.png";
 import shailin from "../../assets/Shailen.png";
 import saurabh from "../../assets/Saurabh.png";
-import sonu from "../../assets/sonu.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -85,12 +84,7 @@ const teamMembers: TeamMember[] = [
     role: "Digital Marketing",
     image: udit,
   },
-  {
-    id: 12,
-    name: "Sonu Saxena",
-    role: "Admin",
-    image: sonu,
-  },
+
   {
     id: 13,
     name: "Ravi Bhist",

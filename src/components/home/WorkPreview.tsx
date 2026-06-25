@@ -8,10 +8,11 @@ import marketing from "../../assets/marketing.jpg";
 import creative from "../../assets/creative.png";
 import amaarujala from "../../assets/Logo/amaarujala.png";
 import indiatv from "../../assets/Logo/IndiaTV.png";
-import lamar from "../../assets/Artboard 1Lamar logo.png";
+import lamar from "../../assets/Lamar logo.png";
 import porter from "../../assets/Logo/Porter.png";
 import wildthing from "../../assets/Logo/wildthing.png";
 import koffelo from "../../assets/Logo/Koffelo logo.png";
+import uber from "../../assets/uberr.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -49,7 +50,7 @@ export const WorkPreview = ({ onNavigate }: WorkPreviewProps) => {
     },
   ];
 
-  const brands = [amaarujala, indiatv, lamar, porter, wildthing, koffelo];
+  const brands = [amaarujala, uber, indiatv, lamar, porter, wildthing, koffelo];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -351,12 +352,12 @@ export const WorkPreview = ({ onNavigate }: WorkPreviewProps) => {
               {[...brands, ...brands].map((src, idx) => (
                 <div
                   key={idx}
-                  className="brand-logo flex-shrink-0 opacity-50 hover:opacity-100 transition-opacity duration-300"
+                  className="brand-logo flex-shrink-0 opacity-50 hover:opacity-100 transition-opacity duration-200"
                 >
                   <img
                     src={src}
                     alt={`Brand logo ${idx}`}
-                    className="h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                    className="h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-200"
                   />
                 </div>
               ))}
