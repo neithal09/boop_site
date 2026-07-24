@@ -60,12 +60,12 @@ const teamMembers: TeamMember[] = [
     image: Kripal,
   },
 
-  {
-    id: 8,
-    name: "Saurabh Dixit",
-    role: "Head of Strategy",
-    image: saurabh,
-  },
+  // {
+  //   id: 8,
+  //   name: "Saurabh Dixit",
+  //   role: "Head of Strategy",
+  //   image: saurabh,
+  // },
   {
     id: 9,
     name: "Ayush Kumar",
@@ -78,19 +78,19 @@ const teamMembers: TeamMember[] = [
     role: "Head of Production",
     image: inderjit,
   },
-  {
-    id: 11,
-    name: "Udit Gupta",
-    role: "Digital Marketing",
-    image: udit,
-  },
+  // {
+  //   id: 11,
+  //   name: "Udit Gupta",
+  //   role: "Digital Marketing",
+  //   image: udit,
+  // },
 
-  {
-    id: 13,
-    name: "Ravi Bhist",
-    role: "Video Editor",
-    image: ravi,
-  },
+  // {
+  //   id: 13,
+  //   name: "Ravi Bhist",
+  //   role: "Video Editor",
+  //   image: ravi,
+  // },
 ];
 
 export const Team = () => {
