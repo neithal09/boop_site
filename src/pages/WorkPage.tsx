@@ -1,5 +1,14 @@
 import { useState, useRef, useEffect } from "react";
-import { ChevronDown } from "lucide-react";
+import {
+  ChevronDown,
+  Calendar,
+  MapPin,
+  Play,
+  Pause,
+  Volume2,
+  VolumeX,
+  Expand,
+} from "lucide-react";
 import { useIntersectionObserver } from "../hooks/useScrollAnimation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -57,6 +66,12 @@ import btlDiwali2 from "../assets/our work/BTL Activities/Diwali  Merchandising 
 import btlGanesh1 from "../assets/our work/BTL Activities/Ganesh Chathurti campaign with ABP Majha/Screenshot 2025-12-31 153620.png";
 import btlGanesh2 from "../assets/our work/BTL Activities/Ganesh Chathurti campaign with ABP Majha/Screenshot 2025-12-31 153624.png";
 import ganeshVideo from "../assets/ganesh.webm";
+import porterVideo from "../assets/our work/porter_event/portervideo.mp4";
+import porter1 from "../assets/our work/porter_event/porter1.jpg";
+import porter2 from "../assets/our work/porter_event/porter2.jpg";
+import porter3 from "../assets/our work/porter_event/porter3.jpg";
+import porter4 from "../assets/our work/porter_event/porter4.jpg";
+import porter5 from "../assets/our work/porter_event/porter5.png";
 import btlChromebook1 from "../assets/our work/BTL Activities/Google Chromebook Pan INDIA Roadshow/Screenshot 2025-12-31 154006.png";
 import btlChromebook2 from "../assets/our work/BTL Activities/Google Chromebook Pan INDIA Roadshow/Screenshot 2025-12-31 154014.png";
 import btlHero1 from "../assets/our work/BTL Activities/Hero Electric Pan India Road Show 6 Months Campaign/Screenshot 2025-12-31 154024.png";
@@ -111,6 +126,14 @@ import exhibIFF1 from "../assets/our work/Exhibition Stall/IFF 2024, Mumbai/Scre
 import exhibIFF2 from "../assets/our work/Exhibition Stall/IFF 2024, Mumbai/Screenshot 2025-12-26 181231.png";
 import exhibMithai1 from "../assets/our work/Exhibition Stall/The World Mithai Namkeen Convention & Expo 2024, New Delhi/Screenshot 2025-12-26 181241.png";
 import exhibMithai2 from "../assets/our work/Exhibition Stall/The World Mithai Namkeen Convention & Expo 2024, New Delhi/Screenshot 2025-12-26 181248.png";
+import porterStall1 from "../assets/our work/porter_event/PHOTO-2026-09-15-17-12-38.jpg";
+import porterStall2 from "../assets/our work/porter_event/PHOTO-2026-09-15-17-12-38 2.jpg";
+import porterStall3 from "../assets/our work/porter_event/PHOTO-2026-09-15-17-12-39.jpg";
+import porterStall4 from "../assets/our work/porter_event/PHOTO-2026-09-15-17-12-39 2.jpg";
+import porterStall5 from "../assets/our work/porter_event/PHOTO-2026-09-15-17-12-39 3.jpg";
+import porterStall6 from "../assets/our work/porter_event/PHOTO-2026-09-15-17-12-40.jpg";
+import porterStall7 from "../assets/our work/porter_event/PHOTO-2026-09-15-17-12-40 2.jpg";
+import porterStall8 from "../assets/our work/porter_event/PHOTO-2026-09-15-17-12-40 3.jpg";
 
 import socialParas1 from "../assets/our work/social media/Paras Dairy/Screenshot 2025-12-26 172521.png";
 import socialParas2 from "../assets/our work/social media/Paras Dairy/Screenshot 2025-12-26 172526.png";
@@ -144,17 +167,252 @@ type Project = {
   poster?: string;
 };
 
+// Featured Event Showcase - TruckLoads of Change
+const galleryImages = [porter1, porter2, porter3, porter4, porter5];
+
+// Mosaic layout: hero tile, then a wide panoramic strip to close the grid
+const gallerySpans = [
+  "col-span-2 row-span-2",
+  "col-span-2",
+  "col-span-1",
+  "col-span-1",
+  "col-span-2 md:col-span-4",
+];
+
+const PorterEventShowcase = ({
+  onPhotoClick,
+}: {
+  onPhotoClick: (index: number) => void;
+}) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
+
+  const togglePlay = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.paused) {
+      video.play();
+      setIsPlaying(true);
+    } else {
+      video.pause();
+      setIsPlaying(false);
+    }
+  };
+
+  const toggleMute = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = !video.muted;
+    setIsMuted(video.muted);
+    if (video.paused) {
+      video.play();
+      setIsPlaying(true);
+    }
+  };
+
+  return (
+    <div className="mb-24 animate-fade-in">
+      {/* Event Info */}
+      <div className="relative overflow-hidden rounded-3xl glass p-8 md:p-12 mb-10">
+        {/* Ambient glow */}
+        <div className="pointer-events-none absolute -top-24 -right-16 w-72 h-72 bg-amber-500/20 rounded-full blur-3xl"></div>
+        <div className="pointer-events-none absolute -bottom-24 -left-16 w-72 h-72 bg-rose-500/20 rounded-full blur-3xl"></div>
+
+        <div className="relative">
+          <div className="inline-flex items-center gap-2 mb-5">
+            <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+            <span className="text-amber-400 font-semibold text-xs uppercase tracking-[0.25em]">
+              Featured Event
+            </span>
+          </div>
+
+          <h3 className="text-4xl md:text-6xl font-bold tracking-wide mb-4">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-orange-400 to-rose-500">
+              TruckLoads of Change
+            </span>
+          </h3>
+
+          <p className="text-gray-300 text-lg leading-relaxed max-w-2xl mb-8">
+            A landmark on-ground celebration brought to life end to end — stage,
+            scale and storytelling coming together for one unforgettable evening.
+          </p>
+
+          {/* Date & Venue */}
+          <div className="flex flex-wrap gap-4">
+            <div className="flex items-center gap-3 glass rounded-2xl px-5 py-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center">
+                <Calendar className="w-5 h-5 text-black" />
+              </div>
+              <div>
+                <p className="text-gray-400 text-[11px] uppercase tracking-widest">
+                  Event Date
+                </p>
+                <p className="text-white font-semibold">10th August 2026</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3 glass rounded-2xl px-5 py-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-rose-400 to-pink-600 flex items-center justify-center">
+                <MapPin className="w-5 h-5 text-black" />
+              </div>
+              <div>
+                <p className="text-gray-400 text-[11px] uppercase tracking-widest">
+                  Venue
+                </p>
+                <p className="text-white font-semibold">
+                  The Lalit, New Delhi
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Event Media Section */}
+      <div className="relative">
+        {/* Section label */}
+        <div className="flex items-center gap-4 mb-6">
+          <span className="text-white font-semibold text-sm uppercase tracking-[0.3em]">
+            Event Film
+          </span>
+          <div className="flex-1 h-px bg-gradient-to-r from-amber-500/60 via-rose-500/30 to-transparent"></div>
+        </div>
+
+        {/* Cinematic video frame */}
+        <div className="group relative rounded-3xl p-[1px] bg-gradient-to-br from-amber-400/60 via-rose-500/30 to-transparent shadow-2xl shadow-amber-900/20">
+          <div className="relative rounded-[calc(1.5rem-1px)] overflow-hidden bg-black">
+            <video
+              ref={videoRef}
+              src={porterVideo}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              onClick={togglePlay}
+              className="w-full aspect-video object-cover cursor-pointer"
+            />
+
+            {/* Cinematic vignette */}
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30"></div>
+
+            {/* Sound prompt overlay */}
+            {isMuted && (
+              <button
+                onClick={toggleMute}
+                className="absolute inset-0 flex flex-col items-center justify-center gap-4 transition-opacity duration-300"
+              >
+                <span className="w-20 h-20 rounded-full glass flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Volume2 className="w-8 h-8 text-amber-400" />
+                </span>
+                <span className="text-white/90 text-sm font-semibold uppercase tracking-[0.2em]">
+                  Tap for sound
+                </span>
+              </button>
+            )}
+
+            {/* Title strip */}
+            <div className="pointer-events-none absolute bottom-0 left-0 right-0 p-6 flex items-end justify-between gap-4">
+              <div>
+                <p className="text-white text-lg md:text-xl font-bold">
+                  TruckLoads of Change — Show Reel
+                </p>
+                <p className="text-amber-400 text-xs uppercase tracking-widest mt-1">
+                  The Lalit, New Delhi · 10 Aug 2026
+                </p>
+              </div>
+
+              {/* Playback controls */}
+              <div className="pointer-events-auto flex items-center gap-2">
+                <button
+                  onClick={togglePlay}
+                  aria-label={isPlaying ? "Pause video" : "Play video"}
+                  className="w-11 h-11 rounded-full glass flex items-center justify-center text-white hover:text-amber-400 hover:scale-110 transition-all"
+                >
+                  {isPlaying ? (
+                    <Pause className="w-5 h-5" />
+                  ) : (
+                    <Play className="w-5 h-5 ml-0.5" />
+                  )}
+                </button>
+                <button
+                  onClick={toggleMute}
+                  aria-label={isMuted ? "Unmute video" : "Mute video"}
+                  className="w-11 h-11 rounded-full glass flex items-center justify-center text-white hover:text-amber-400 hover:scale-110 transition-all"
+                >
+                  {isMuted ? (
+                    <VolumeX className="w-5 h-5" />
+                  ) : (
+                    <Volume2 className="w-5 h-5" />
+                  )}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Event Gallery */}
+        <div className="mt-14">
+          <div className="flex items-center gap-4 mb-6">
+            <span className="text-white font-semibold text-sm uppercase tracking-[0.3em]">
+              Event Gallery
+            </span>
+            <div className="flex-1 h-px bg-gradient-to-r from-rose-500/60 via-amber-500/30 to-transparent"></div>
+            <span className="text-gray-500 text-xs tracking-widest">
+              {galleryImages.length} PHOTOS
+            </span>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[150px] md:auto-rows-[190px]">
+            {galleryImages.map((img, idx) => (
+              <div
+                key={idx}
+                onClick={() => onPhotoClick(idx)}
+                className={`project-card group/photo relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl hover:shadow-amber-500/20 transition-all duration-300 cursor-pointer ${gallerySpans[idx]}`}
+              >
+                <img
+                  src={img}
+                  alt={`TruckLoads of Change - photo ${idx + 1}`}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover group-hover/photo:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover/photo:opacity-100 transition-opacity duration-300 flex items-end justify-between p-4">
+                  <p className="text-white font-semibold text-sm">
+                    View gallery
+                  </p>
+                  <span className="w-9 h-9 rounded-full glass flex items-center justify-center">
+                    <Expand className="w-4 h-4 text-amber-400" />
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 // Modal Component
 const ImageModal = ({
   isOpen,
   project,
   onClose,
+  startIndex = 0,
 }: {
   isOpen: boolean;
   project: any;
   onClose: () => void;
+  startIndex?: number;
 }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(startIndex);
+
+  // Open on the thumbnail that was clicked, and reset between projects
+  useEffect(() => {
+    if (isOpen) setCurrentIndex(startIndex);
+  }, [isOpen, startIndex, project]);
 
   if (!isOpen || !project) return null;
 
@@ -331,6 +589,7 @@ export const WorkPage = () => {
   // Modal state for image viewing
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [modalStartIndex, setModalStartIndex] = useState(0);
 
   // Refs for GSAP animations
   const containerRef = useRef<HTMLDivElement>(null);
@@ -655,6 +914,13 @@ export const WorkPage = () => {
     ],
     Events: [
       {
+        title: "TruckLoads of Change",
+        client: "Porter",
+        category: "Events",
+        image: porter1,
+        images: [porter1, porter2, porter3, porter4, porter5],
+      },
+      {
         title: "Airtel Leadership Conclave",
         client: "Airtel",
         category: "Events",
@@ -712,6 +978,22 @@ export const WorkPage = () => {
       },
     ],
     "Exhibition Stalls": [
+      {
+        title: "TruckLoads of Change Stall",
+        client: "Porter",
+        category: "Exhibition Stalls",
+        image: porterStall1,
+        images: [
+          porterStall1,
+          porterStall2,
+          porterStall3,
+          porterStall4,
+          porterStall5,
+          porterStall6,
+          porterStall7,
+          porterStall8,
+        ],
+      },
       {
         title: "Pragati Maidan Stall",
         client: "Multi-Client",
@@ -853,8 +1135,9 @@ export const WorkPage = () => {
   };
 
   // Handle project click
-  const handleProjectClick = (project: Project) => {
+  const handleProjectClick = (project: Project, startIndex = 0) => {
     setSelectedProject(project);
+    setModalStartIndex(startIndex);
     setIsModalOpen(true);
   };
 
@@ -2552,6 +2835,18 @@ export const WorkPage = () => {
               </p>
             </div>
 
+            {/* Featured: TruckLoads of Change */}
+            <PorterEventShowcase
+              onPhotoClick={(index) =>
+                handleProjectClick(
+                  portfolio["Events"].find(
+                    (p) => p.title === "TruckLoads of Change",
+                  )!,
+                  index,
+                )
+              }
+            />
+
             <div className="grid md:grid-cols-2 gap-12 items-center mb-20 animate-fade-in delay-100">
               <div className="space-y-6">
                 <h3 className="text-2xl font-bold text-white">
@@ -2943,6 +3238,11 @@ export const WorkPage = () => {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in">
               {[
+                {
+                  img1: porterStall1,
+                  img2: porterStall2,
+                  title: "TruckLoads of Change Stall",
+                },
                 {
                   img1: exhibPragati1,
                   img2: exhibPragati2,
@@ -3336,6 +3636,7 @@ export const WorkPage = () => {
         isOpen={isModalOpen}
         project={selectedProject}
         onClose={closeModal}
+        startIndex={modalStartIndex}
       />
     </div>
   );

@@ -58,7 +58,7 @@ export const Footer = ({ onNavigate }: FooterProps) => {
       icon: MapPin,
       label: "Address",
       value:
-        "Bhutani Alphathum, Tower-B, Office No. 504–505, Sector 90, Noida, Uttar Pradesh – 201304, India",
+        "Bhutani Alphathum, Tower-B, Office No. 2237–2238, Sector 90, Noida, Uttar Pradesh – 201304, India",
     },
   ];
 
