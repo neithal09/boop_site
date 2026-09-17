@@ -34,19 +34,19 @@ export const WorkPreview = ({ onNavigate }: WorkPreviewProps) => {
       id: 1,
       image: asli,
       title: "Brand Campaign",
-      category: "FMCG",
+      // category: "FMCG",
     },
     {
       id: 2,
       image: marketing,
       title: "Marketing Campaign",
-      category: "Media",
+      // category: "Media",
     },
     {
       id: 3,
       image: creative,
       title: "Creative Work",
-      category: "Technology",
+      // category: "Technology",
     },
   ];
 
@@ -314,9 +314,9 @@ export const WorkPreview = ({ onNavigate }: WorkPreviewProps) => {
 
                 {/* Text overlay */}
                 <div className="work-text absolute bottom-0 left-0 right-0 p-6 z-10">
-                  <span className="inline-block px-3 py-1 border border-white/40 rounded-full text-white text-xs font-medium backdrop-blur-md mb-3">
+                  {/* <span className="inline-block px-3 py-1 border border-white/40 rounded-full text-white text-xs font-medium backdrop-blur-md mb-3">
                     {work.category}
-                  </span>
+                  </span> */}
                   <h4 className="text-2xl md:text-3xl font-bold text-white">
                     {work.title}
                   </h4>

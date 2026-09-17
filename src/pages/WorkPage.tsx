@@ -235,7 +235,8 @@ const PorterEventShowcase = ({
 
           <p className="text-gray-300 text-lg leading-relaxed max-w-2xl mb-8">
             A landmark on-ground celebration brought to life end to end — stage,
-            scale and storytelling coming together for one unforgettable evening.
+            scale and storytelling coming together for one unforgettable
+            evening.
           </p>
 
           {/* Date & Venue */}
@@ -260,9 +261,7 @@ const PorterEventShowcase = ({
                 <p className="text-gray-400 text-[11px] uppercase tracking-widest">
                   Venue
                 </p>
-                <p className="text-white font-semibold">
-                  The Lalit, New Delhi
-                </p>
+                <p className="text-white font-semibold">The Lalit, New Delhi</p>
               </div>
             </div>
           </div>
@@ -303,53 +302,51 @@ const PorterEventShowcase = ({
                 onClick={toggleMute}
                 className="absolute inset-0 flex flex-col items-center justify-center gap-4 transition-opacity duration-300"
               >
-                <span className="w-20 h-20 rounded-full glass flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Volume2 className="w-8 h-8 text-amber-400" />
+                <span className="w-16 h-16 sm:w-20 sm:h-20 rounded-full glass flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Volume2 className="w-7 h-7 sm:w-8 sm:h-8 text-amber-400" />
                 </span>
-                <span className="text-white/90 text-sm font-semibold uppercase tracking-[0.2em]">
+                <span className="text-white/90 text-xs sm:text-sm font-semibold uppercase tracking-[0.2em]">
                   Tap for sound
                 </span>
               </button>
             )}
 
-            {/* Title strip */}
-            <div className="pointer-events-none absolute bottom-0 left-0 right-0 p-6 flex items-end justify-between gap-4">
-              <div>
-                <p className="text-white text-lg md:text-xl font-bold">
-                  TruckLoads of Change — Show Reel
-                </p>
-                <p className="text-amber-400 text-xs uppercase tracking-widest mt-1">
-                  The Lalit, New Delhi · 10 Aug 2026
-                </p>
-              </div>
-
-              {/* Playback controls */}
-              <div className="pointer-events-auto flex items-center gap-2">
-                <button
-                  onClick={togglePlay}
-                  aria-label={isPlaying ? "Pause video" : "Play video"}
-                  className="w-11 h-11 rounded-full glass flex items-center justify-center text-white hover:text-amber-400 hover:scale-110 transition-all"
-                >
-                  {isPlaying ? (
-                    <Pause className="w-5 h-5" />
-                  ) : (
-                    <Play className="w-5 h-5 ml-0.5" />
-                  )}
-                </button>
-                <button
-                  onClick={toggleMute}
-                  aria-label={isMuted ? "Unmute video" : "Mute video"}
-                  className="w-11 h-11 rounded-full glass flex items-center justify-center text-white hover:text-amber-400 hover:scale-110 transition-all"
-                >
-                  {isMuted ? (
-                    <VolumeX className="w-5 h-5" />
-                  ) : (
-                    <Volume2 className="w-5 h-5" />
-                  )}
-                </button>
-              </div>
+            {/* Playback controls */}
+            <div className="absolute bottom-0 right-0 p-4 md:p-6 flex items-center gap-2">
+              <button
+                onClick={togglePlay}
+                aria-label={isPlaying ? "Pause video" : "Play video"}
+                className="w-11 h-11 rounded-full glass flex items-center justify-center text-white hover:text-amber-400 hover:scale-110 transition-all"
+              >
+                {isPlaying ? (
+                  <Pause className="w-5 h-5" />
+                ) : (
+                  <Play className="w-5 h-5 ml-0.5" />
+                )}
+              </button>
+              <button
+                onClick={toggleMute}
+                aria-label={isMuted ? "Unmute video" : "Mute video"}
+                className="w-11 h-11 rounded-full glass flex items-center justify-center text-white hover:text-amber-400 hover:scale-110 transition-all"
+              >
+                {isMuted ? (
+                  <VolumeX className="w-5 h-5" />
+                ) : (
+                  <Volume2 className="w-5 h-5" />
+                )}
+              </button>
             </div>
           </div>
+        </div>
+
+        {/* Caption below the video */}
+        <div className="mt-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+          <p className="text-white text-lg md:text-xl font-bold">
+            TruckLoads of Change — Show Reel
+          </p>
+          <p className="text-amber-400 text-xs uppercase tracking-widest">
+            The Lalit, New Delhi · 10 Aug 2026
+          </p>
         </div>
 
         {/* Event Gallery */}
@@ -979,7 +976,7 @@ export const WorkPage = () => {
     ],
     "Exhibition Stalls": [
       {
-        title: "TruckLoads of Change Stall",
+        title: "Stall at Bhartiya Vyapar Mahotsav 2026",
         client: "Porter",
         category: "Exhibition Stalls",
         image: porterStall1,
@@ -3241,7 +3238,7 @@ export const WorkPage = () => {
                 {
                   img1: porterStall1,
                   img2: porterStall2,
-                  title: "TruckLoads of Change Stall",
+                  title: "Stall at Bhartiya Vyapar Mahotsav 2026",
                 },
                 {
                   img1: exhibPragati1,
